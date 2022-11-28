@@ -3,6 +3,8 @@ import React, { useState, useEffect } from "react";
 // @mui
 import { Container } from "@mui/system";
 import { Grid } from "@mui/material";
+import CircularProgress from "@mui/material/CircularProgress";
+import Box from "@mui/material/Box";
 // components
 import ShowCard from "../showCard";
 import { axiosGet } from "../../axios/config";
@@ -32,13 +34,19 @@ const Shows = () => {
   return (
     <Container sx={{ mt: 2 }}>
       <Grid container>
-        {shows && shows.length > 0
-          ? shows?.map((item) => (
-              <Grid sx={{ margin: "1rem 0" }} item xs={12} md={4}>
-                <ShowCard show={item.show} />
-              </Grid>
-            ))
-          : "No Shows Found"}
+        {isLoading ? (
+          <Box sx={{ display: "flex" }}>
+            <CircularProgress />
+          </Box>
+        ) : shows && shows.length > 0 ? (
+          shows?.map((item) => (
+            <Grid sx={{ margin: "1rem 0" }} item xs={12} md={4}>
+              <ShowCard show={item.show} />
+            </Grid>
+          ))
+        ) : (
+          "No Shows Found"
+        )}
       </Grid>
     </Container>
   );
