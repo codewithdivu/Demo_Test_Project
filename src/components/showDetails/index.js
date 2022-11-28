@@ -76,7 +76,7 @@ const ShowDetails = () => {
             <p>{show?.rating?.average}/10</p>
             <h6>Official Website</h6>
             <a href={show?.network?.officialSite}>
-              {show?.network?.officialSite}/10
+              {show?.network?.officialSite || "none"}
             </a>
             <h6>Duration</h6>
             <p>{show?.runtime} Minutes</p>
