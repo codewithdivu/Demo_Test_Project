@@ -1,17 +1,23 @@
-import * as React from "react";
+// react
+import React from "react";
+// react-router-dom
 import { useNavigate } from "react-router-dom";
-import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
-import Link from "@mui/material/Link";
-import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
+// @mui
+import {
+  Card,
+  CardActions,
+  CardContent,
+  CardMedia,
+  Link,
+  Button,
+  Typography,
+} from "@mui/material";
 
 export default function ShowCard({ show }) {
+  // state
   const navigate = useNavigate();
-
   const { name, premiered, image, id } = show;
+
   return (
     <Card sx={{ maxWidth: 345 }}>
       <Link

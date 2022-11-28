@@ -1,12 +1,15 @@
+// react
 import React, { useState, useEffect } from "react";
 // @mui
 import { Container } from "@mui/system";
 import { Grid } from "@mui/material";
+// components
 import ShowCard from "../showCard";
 import { axiosGet } from "../../axios/config";
 import { apiRouter } from "../../axios/apiRoutes";
 
 const Shows = () => {
+  // states
   const [shows, setShows] = useState();
   const [isLoading, setIsLoading] = useState(false);
 

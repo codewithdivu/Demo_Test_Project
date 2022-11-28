@@ -1,9 +1,11 @@
+// react
 import React from "react";
-import Box from "@mui/material/Box";
-import Modal from "@mui/material/Modal";
-import Button from "@mui/material/Button";
+// @mui
+import { Box, Modal, Button } from "@mui/material";
+// Components
 import MovieBookingForm from "./movieBookingForm";
 
+// @mui Styles
 const style = {
   position: "absolute",
   top: "50%",
@@ -17,6 +19,7 @@ const style = {
 };
 
 export default function KeepMountedModal() {
+  // states
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -34,7 +37,7 @@ export default function KeepMountedModal() {
         aria-describedby="keep-mounted-modal-description"
       >
         <Box sx={style}>
-          <MovieBookingForm />
+          <MovieBookingForm handleClose={handleClose} />
         </Box>
       </Modal>
     </div>

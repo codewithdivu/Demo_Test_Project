@@ -1,7 +1,9 @@
+// react
 import React from "react";
+// @mui
 import { Typography, TextField, Button } from "@mui/material";
 
-const MovieBookingForm = () => {
+const MovieBookingForm = ({ handleClose }) => {
   return (
     <div style={{ textAlign: "center" }}>
       <Typography variant="h5">Show Booking Form</Typography>
@@ -42,7 +44,7 @@ const MovieBookingForm = () => {
         />
         <br />
 
-        <Button variant="contained" color="primary">
+        <Button onClick={handleClose} variant="contained" color="primary">
           Submit
         </Button>
       </form>
